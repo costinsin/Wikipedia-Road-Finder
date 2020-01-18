@@ -4,28 +4,30 @@ from time import strftime
 from time import gmtime
 from threading import Thread
 
-#settings
-startPage = 'Gaz petrolier lichefiat'
-endPage = 'Paracetamol'
-initWiki = wikipediaapi.Wikipedia('ro')
+#Settings
+startPage = 'Ketchup' #the page where the search starts
+endPage = 'Paracetamol' #the page where the search ends
+initWiki = wikipediaapi.Wikipedia('ro') #change to your Wikipedia language
 maxDepth = 10
 
-#Skippable pages, not fair using them
-bad_links = ["Wikipedia:", "Ajutor:", "Format:", "WP:", "Categorie:",\
- "Utilizator:", "Fișier:", "Portal:", "Proiect:", "MediaWiki:", "Modul:"]
+#Skippable pages, not fair using them, change them to your own language to skip them
+bad_links = ["Wikipedia:", "Ajutor:", "Format:", "WP:", "Categorie:",\ #ro
+ "Utilizator:", "Fișier:", "Portal:", "Proiect:", "MediaWiki:", "Modul:"\
+ "Wikipedia:", "Help:", "Format:", "WP:", "Category:",\ #en
+ "User:", "File:", "Portal:", "Project:", "MediaWiki:", "Module:"]]
 
-#global variable declaration
+#Global variable declaration
 pages = []
 parent = {}
 pathFound = 0
 threads = []
 
-#make variable pages a matrix
+#Make variable pages a matrix
 for i in range(maxDepth + 2):
     line = []
     pages.append(line)
 
-#function that searches the page given in 'pageName' and ads the links to queue
+#Function that searches the page given in 'pageName' and ads the links to queue
 def searchPage(depth, pageName):
     global pathFound
     try:
@@ -45,7 +47,7 @@ def searchPage(depth, pageName):
             parent[title] = pageName
             pages[depth + 1].append(str(title))
 
-#main function
+#Main function
 def main():
     currentDepth = 0
     pages[0].append(startPage)
