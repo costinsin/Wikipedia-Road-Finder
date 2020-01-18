@@ -5,4 +5,4 @@ This is a script used to find a road between two pages on Wikipedia.
 * Python 3.7
 * Wikipedia API
 Run the following command to install the Wikipedia API:
-   pip3 install wikipedia-api
+*pip3 install wikipedia-api
