@@ -11,10 +11,10 @@ initWiki = wikipediaapi.Wikipedia('ro') #change to your Wikipedia language
 maxDepth = 10
 
 #Skippable pages, not fair using them, change them to your own language to skip them
-bad_links = ["Wikipedia:", "Ajutor:", "Format:", "WP:", "Categorie:",\ #ro
+bad_links = ["Wikipedia:", "Ajutor:", "Format:", "WP:", "Categorie:", #ro\ 
  "Utilizator:", "Fișier:", "Portal:", "Proiect:", "MediaWiki:", "Modul:"\
- "Wikipedia:", "Help:", "Format:", "WP:", "Category:",\ #en
- "User:", "File:", "Portal:", "Project:", "MediaWiki:", "Module:"]]
+ "Wikipedia:", "Help:", "Format:", "WP:", "Category:", #en\ 
+ "User:", "File:", "Portal:", "Project:", "MediaWiki:", "Module:"]
 
 #Global variable declaration
 pages = []
